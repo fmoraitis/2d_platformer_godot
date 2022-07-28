@@ -1,0 +1,109 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://scenes/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://addons/behavior_tree/nodes/bt_root.gd" type="Script" id=2]
+[ext_resource path="res://assets/enemy/character_0017.png" type="Texture" id=3]
+[ext_resource path="res://assets/enemy/character_0016.png" type="Texture" id=4]
+[ext_resource path="res://addons/behavior_tree/nodes/composites/selector.gd" type="Script" id=5]
+[ext_resource path="res://scenes/Patrol.gd" type="Script" id=6]
+[ext_resource path="res://addons/behavior_tree/nodes/composites/sequence.gd" type="Script" id=7]
+[ext_resource path="res://assets/enemy/character_0015.png" type="Texture" id=8]
+[ext_resource path="res://scenes/caught.gd" type="Script" id=9]
+[ext_resource path="res://scenes/chase.gd" type="Script" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "chase",
+"speed": 20.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 5, 8 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 3, 8 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 10, 5 )
+
+[node name="Enemy" type="KinematicBody2D"]
+collision_layer = 4
+script = ExtResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -12 )
+frames = SubResource( 1 )
+animation = "chase"
+frame = 1
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -8 )
+shape = SubResource( 2 )
+
+[node name="CheckFall" type="RayCast2D" parent="."]
+position = Vector2( 5, -9 )
+enabled = true
+cast_to = Vector2( 0, 20 )
+collide_with_areas = true
+
+[node name="CheckIfcollideWithPlayer" type="RayCast2D" parent="."]
+visible = false
+position = Vector2( 3, -6 )
+enabled = true
+cast_to = Vector2( 8, 0 )
+collision_mask = 2
+collide_with_areas = true
+
+[node name="BehaviorTreeRoot" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="DoOneOfTheFollowing" type="Node" parent="BehaviorTreeRoot"]
+script = ExtResource( 5 )
+
+[node name="attack" type="Node" parent="BehaviorTreeRoot/DoOneOfTheFollowing"]
+script = ExtResource( 7 )
+
+[node name="chase" type="Node" parent="BehaviorTreeRoot/DoOneOfTheFollowing/attack"]
+script = ExtResource( 10 )
+
+[node name="caught" type="Node" parent="BehaviorTreeRoot/DoOneOfTheFollowing/attack"]
+script = ExtResource( 9 )
+
+[node name="Patrol" type="Node" parent="BehaviorTreeRoot/DoOneOfTheFollowing"]
+script = ExtResource( 6 )
+
+[node name="deadly_area" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="deadly_area"]
+position = Vector2( -0.5, -8 )
+scale = Vector2( 1.5, 1 )
+shape = SubResource( 8 )
+
+[node name="chase_area" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chase_area"]
+position = Vector2( 0, -5 )
+scale = Vector2( 10, 1 )
+shape = SubResource( 7 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 0, -8 )
+scale = Vector2( 0.68, 0.8 )
+
+[connection signal="area_entered" from="deadly_area" to="BehaviorTreeRoot/DoOneOfTheFollowing/attack/chase" method="_on_deadly_area_area_entered"]
+[connection signal="body_entered" from="chase_area" to="BehaviorTreeRoot/DoOneOfTheFollowing/attack/chase" method="_on_chase_area_body_entered"]
+[connection signal="body_exited" from="chase_area" to="BehaviorTreeRoot/DoOneOfTheFollowing/attack/chase" method="_on_chase_area_body_exited"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
