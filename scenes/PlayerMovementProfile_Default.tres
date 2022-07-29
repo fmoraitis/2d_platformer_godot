@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://scenes/PlayerMovementProfile.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+max_dashing_speed = 500
+gravity = 900
+max_horizontal_speed = 125
+horizontal_acceleration = 2000
+jump_speed = 330

@@ -1,26 +1,26 @@
 extends KinematicBody2D
+class_name Player
 
 signal died 
 
 enum State {NORMAL,DASHING}
 var curent_state = State.NORMAL
+#preload my custom recource
+export (Resource) var Move_Player_Profile = preload ("res://scenes/PlayerMovementProfile_Default.tres")
 
-var max_dashing_speed = 500
+var max_dashing_speed =  Move_Player_Profile.max_dashing_speed
 var velocity_dashing = Vector2.ZERO 
 var just_entered_state = false
 var can_dash_again = true
 
-var gravity = 900
+var gravity =  Move_Player_Profile.gravity
 var velocity = Vector2.ZERO 
-var max_horizontal_speed = 125
-var horizontal_acceleration = 2000
-var jump_speed = 330
+var max_horizontal_speed = Move_Player_Profile.max_horizontal_speed
+var horizontal_acceleration = Move_Player_Profile.horizontal_acceleration
+var jump_speed = Move_Player_Profile.jump_speed
 var jump_terminal_multiplier = 3
 var has_double_jump = false
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 
 
 # Called when the node enters the scene tree for the first time.

@@ -69,6 +69,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/behavior_tree/nodes/decorators/limiter.gd"
 }, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://scenes/player.gd"
+}, {
+"base": "Resource",
+"class": "PlayerMovementProfile",
+"language": "GDScript",
+"path": "res://scenes/PlayerMovementProfile.gd"
+}, {
 "base": "Composite",
 "class": "SelectorComposite",
 "language": "GDScript",
@@ -92,6 +102,8 @@ _global_script_class_icons={
 "InverterDecorator": "res://addons/behavior_tree/icons/inverter.svg",
 "Leaf": "res://addons/behavior_tree/icons/action.svg",
 "LimiterDecorator": "res://addons/behavior_tree/icons/limiter.svg",
+"Player": "",
+"PlayerMovementProfile": "",
 "SelectorComposite": "res://addons/behavior_tree/icons/selector.svg",
 "SequenceComposite": "res://addons/behavior_tree/icons/sequencer.svg"
 }
