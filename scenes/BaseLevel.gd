@@ -26,11 +26,13 @@ func create_player():
 	
 	
 func on_player_died():
-	player_node.queue_free()
+#	player_node.queue_free()
+	get_tree().reload_current_scene()
 	create_player()
 	
 func on_player_died_by_enemy():
 	print("received died from enemy")
-	player_node.queue_free()
+	get_tree().reload_current_scene()
+#	player_node.queue_free()
 	create_player()
 	
