@@ -4,7 +4,8 @@ export (Color, RGB) var background_color
 
 func _ready():
 	VisualServer.set_default_clear_color(background_color)
-
+	# offeset the camera to look nicer
+	offset.y = 0
 func _physics_process(delta):
 	aquireTargetPosition()
 	global_position= lerp(target_position,global_position,pow(2,-35*delta)) 
