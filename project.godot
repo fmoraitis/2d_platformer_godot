@@ -64,6 +64,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/behavior_tree/nodes/decorators/decorator.gd"
 }, {
+"base": "Area2D",
+"class": "Flag_Area",
+"language": "GDScript",
+"path": "res://scenes/Flag_Area.gd"
+}, {
 "base": "Decorator",
 "class": "InverterDecorator",
 "language": "GDScript",
@@ -111,6 +116,7 @@ _global_script_class_icons={
 "Composite": "res://addons/behavior_tree/icons/category_composite.svg",
 "ConditionLeaf": "res://addons/behavior_tree/icons/condition.svg",
 "Decorator": "res://addons/behavior_tree/icons/category_decorator.svg",
+"Flag_Area": "",
 "InverterDecorator": "res://addons/behavior_tree/icons/inverter.svg",
 "Leaf": "res://addons/behavior_tree/icons/action.svg",
 "LimiterDecorator": "res://addons/behavior_tree/icons/limiter.svg",
@@ -125,6 +131,10 @@ _global_script_class_icons={
 config/name="my_2d_platformer"
 run/main_scene="res://scenes/main.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+LevelManager="*res://scenes/LevelManager.tscn"
 
 [display]
 
@@ -189,7 +199,7 @@ dash={
 2d_physics/layer_1="ground"
 2d_physics/layer_2="player"
 2d_physics/layer_3="enemy"
-2d_physics/layer_4="coin"
+2d_physics/layer_4="collectibles"
 2d_physics/layer_5="hazzards"
 2d_physics/layer_6="player_soft_spot_for_hazzards"
 

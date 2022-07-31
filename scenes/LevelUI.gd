@@ -20,4 +20,4 @@ func _ready() -> void:
 #func _process(delta: float) -> void:
 #	pass
 func on_total_coin_changed(total_coins,collected_coins):
-	$MarginContainer/Label.text = str(total_coins," / ",collected_coins)
+	$MarginContainer/HBoxContainer/Label.text = str(collected_coins,"/",total_coins)

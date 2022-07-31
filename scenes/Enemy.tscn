@@ -41,7 +41,6 @@ script = ExtResource( 1 )
 position = Vector2( 0, -12 )
 frames = SubResource( 1 )
 animation = "chase"
-frame = 2
 playing = true
 flip_h = true
 

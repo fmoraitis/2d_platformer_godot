@@ -68,11 +68,11 @@ rotate = false
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy_Path/Enemy_Componets"]
 frames = SubResource( 2 )
 animation = "flying"
-frame = 2
 playing = true
 
 [node name="Hit_Box" parent="Enemy_Path/Enemy_Componets" instance=ExtResource( 1 )]
-visible = false
+collision_layer = 16
+collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy_Path/Enemy_Componets/Hit_Box"]
 position = Vector2( 0, 0.5 )

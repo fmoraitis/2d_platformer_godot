@@ -3,6 +3,7 @@ class_name Player
 
 signal died 
 
+
 enum State {NORMAL,DASHING}
 var curent_state = State.NORMAL
 #preload my custom recource
@@ -141,3 +142,10 @@ func getVelocityVector() -> Vector2:
 func _on_AreaValnurableToHazzards_area_entered(_area):
 		#print("just died")
 		emit_signal("died")
+
+
+
+		
+
+
+
