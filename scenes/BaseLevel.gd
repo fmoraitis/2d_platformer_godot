@@ -5,6 +5,7 @@ class_name BaseLevel
 signal total_coin_changed
 
 var Player_Scene = preload ("res://scenes/player.tscn")
+
 var spawned_pos = Vector2.ZERO
 var player_node = null
 var total_coins:int = 0
@@ -49,7 +50,7 @@ func on_player_died():
 	create_player()
 
 func on_won_level():
-#	print("won")
+	print("won")
 	$"/root/LevelManager".next_level()
 	
 #func on_player_died_by_enemy():
