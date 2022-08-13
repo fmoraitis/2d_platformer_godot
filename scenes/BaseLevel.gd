@@ -10,7 +10,7 @@ var Player_Death_Scene= preload ("res://scenes/player_death_scene.tscn")
 @export var level_game_over_screen : PackedScene
 var spawned_pos = Vector2.ZERO
 var player_instance :Node
-var player_death_instance :Node
+var player_death_scene_node :Node
 var total_coins:int = 0
 var collected_coins :int = 0
 
@@ -48,34 +48,31 @@ func create_player():
 	
 	
 func on_player_died(enemy_direction):
-#	player_instance.get_node("PlayerDeathAnimation")
-	# here i put the code dealing with playerDeathScene
 	player_death_scene_init(enemy_direction)
 	player_instance.queue_free()
-	print("received enemy dir ", enemy_direction)
-
-	##################################################
-	await get_tree().create_timer(2).timeout
+	await get_tree().create_timer(2.5).timeout
 	add_child(level_game_over_screen.instantiate())
 
 func player_death_scene_init(enemy_type_or_direction:int):
 	# 2 is a flying enemy, 0 is a spike , -1 or 1 is a regular enemy
-	player_death_instance =  Player_Death_Scene.instantiate()
-	player_death_instance.global_position = player_instance.global_position
-	player_death_instance.get_node("AnimatedSprite").flip_h = player_instance.get_node("AnimatedSprite").flip_h
+	player_death_scene_node =  Player_Death_Scene.instantiate()
+	player_death_scene_node.global_position = player_instance.global_position
+	player_death_scene_node.get_node("Visuals/AnimatedSprite").flip_h = player_instance.get_node("AnimatedSprite").flip_h
 	if enemy_type_or_direction == 0:
-		player_death_instance.velocity.x = 0
-		player_death_instance.velocity.y = -100
+		player_death_scene_node.velocity.x = 0
+		player_death_scene_node.velocity.y = -100
 	if enemy_type_or_direction == 2:
-		player_death_instance.velocity = -1 * player_instance.velocity	
+		player_death_scene_node.velocity = -1 * player_instance.velocity	
 	if enemy_type_or_direction == 1 || enemy_type_or_direction== -1 :
-		player_death_instance.velocity.x = enemy_type_or_direction * sign(player_instance.velocity.x) * 1 * player_instance.velocity.x
-		player_death_instance.velocity.y = -100
+		player_death_scene_node.velocity.x = -1*  player_instance.velocity.x
+		player_death_scene_node.velocity.y = -100	
+		# with this  i ensure that the death animation complies with the direction of the enemy
+		player_death_scene_node.get_node("Visuals").scale.x =  enemy_type_or_direction
 #	player_death_instance.get_node("CollisionShape2D").disabled=true
-	call_deferred("add_child",player_death_instance)
+	call_deferred("add_child",player_death_scene_node)
 
 func on_won_level():
-	print("won")
+#	print("won")
 	add_child(level_complete_screen.instantiate())
 	player_instance.queue_free()
 #

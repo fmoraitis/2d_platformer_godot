@@ -1,5 +1,6 @@
-AnimationPlayer
+GPUParticles2D
 Node2D
+AnimationPlayer
 Node
 CharacterBody2D
 PanelContainer

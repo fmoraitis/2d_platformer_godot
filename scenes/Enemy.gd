@@ -52,4 +52,4 @@ func move_towards_target(body):
 func _on_VisibilityNotifier2D_screen_exited():
 	if !is_on_floor():
 		queue_free()
-		print(self.name," died")
+#		print(self.name," died")

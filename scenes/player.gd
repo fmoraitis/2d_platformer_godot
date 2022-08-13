@@ -20,6 +20,12 @@ var has_double_jump = false
 var can_dash_again = true
 var game_camera :Node
 
+# this is used to ensure that player will
+# not emmit the die signal two times eg if it falls
+# in the middle of two spikes meaning in their overlaping
+# hazards areas
+var player_already_died = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	################# GRAB THE CAMERA FROM THE SCENE TREE ######################
@@ -139,6 +145,10 @@ func apply_gravity(delta:float, gravity_multiplier:float):
 	velocity.y +=  gravity * gravity_multiplier * delta 
 
 func _on_AreaValnurableToHazzards_area_entered(_area):
+	
+	if  player_already_died:
+		return
+	player_already_died=true
 	game_camera.shake_the_camera(1.5,global_delta,0.5)
 	#print(_area.get_parent().direction.x)
 	if _area.get_parent() is Enemy:

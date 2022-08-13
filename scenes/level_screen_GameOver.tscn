@@ -77,5 +77,5 @@ offset_bottom = 72.0
 text = "quit"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/try_again" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/quit" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
