@@ -1,0 +1,8 @@
+res://scenes/LevelManager.tscn
+res://resources/theme.tres
+res://scenes/BaseLevel.tscn
+res://scenes/Level_01.tscn
+res://scenes/player.tscn
+res://scenes/player_death_scene.tscn
+res://scenes/GameCamera.tscn
+res://scenes/BaseLevel.gd

@@ -13,6 +13,6 @@ func _ready():
 
 
 func _on_Flag_Area_body_entered(body: Node) -> void:
-	if body is Player:
+	if body  is Player:
 		print("body entred flag")
-		emit_signal("won_level")
+		won_level.emit()

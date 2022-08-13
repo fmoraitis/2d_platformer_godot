@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://on7ic0k6265"]
 
-[ext_resource path="res://scenes/GameCamera.gd" type="Script" id=1]
+[ext_resource type="Script" path="res://scenes/GameCamera.gd" id="1"]
 
-[node name="GameCamera" type="Camera2D"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_m0b14"]
+seed = 345
+
+[node name="GameCamera" type="Camera2D" groups=["cameras"]]
 current = true
-script = ExtResource( 1 )
-background_color = Color( 0.784314, 0.960784, 0.980392, 1 )
+script = ExtResource("1")
+shake_noise = SubResource("FastNoiseLite_m0b14")
