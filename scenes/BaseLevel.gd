@@ -55,7 +55,7 @@ func on_player_died(enemy_direction):
 	print("received enemy dir ", enemy_direction)
 
 	##################################################
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(2).timeout
 	add_child(level_game_over_screen.instantiate())
 
 func player_death_scene_init(enemy_type_or_direction:int):
