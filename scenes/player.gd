@@ -62,11 +62,12 @@ func set_up_dashing_state(delta):
 func _physics_process_dashing(delta):
 	########## CHECK FOR STATE CHANGE ######################################
 	# i finish the state only when dashing is finished which satisfies the condition bellow
-	if velocity_dashing.x > 100 || velocity_dashing.x < -100:
-		velocity_dashing.x= lerp(0,velocity_dashing.x,pow(2,-5*delta)) 
+	# which is that the dashing speed is too low or it has dashed on a wall
+	if (velocity_dashing.x > 100 || velocity_dashing.x < -100) && !is_on_wall(): #keep dashing
+		velocity_dashing.x= lerpf(0,velocity_dashing.x,pow(2,-5*delta)) 
 		velocity = Vector2(velocity_dashing.x,0.0)
 		move_and_slide()
-	else:
+	else:# return to normal state
 		#print("normal")
 		curent_state = State.NORMAL
 		just_entered_state = true
@@ -85,10 +86,11 @@ func _physics_process_normal(delta):
 	######### APPLY HORIZONTAL MOVEMENT ######################################
 	velocity.x = clamp (velocity.x, -max_horizontal_speed,max_horizontal_speed)
 	# accelarating horizontal
-	velocity.x +=  move_vector.x* horizontal_acceleration * delta
+	velocity.x +=  move_vector.x * horizontal_acceleration * delta
+#	print(velocity.x)
 	# decelarating to zero
 	if move_vector.x == 0:
-		velocity.x= lerp(0,velocity.x,pow(2,-30*delta)) 
+		velocity.x= lerpf(0,velocity.x,pow(2,-30*delta)) 
 	#########################################################################
 	
 	######### APPLY VERTICAL MOVEMENT ######################################
@@ -99,7 +101,7 @@ func _physics_process_normal(delta):
 			game_camera.shake_the_camera(0.75,delta,0.5)
 			has_double_jump = false
 		$CoyoteTimer.stop()	
-	# accelarating vertical
+	# de-accelarating vertical
 	if velocity.y < 0 && !Input.is_action_pressed("jump"):# variable height AND APPLY GRAVITY ***************
 		apply_gravity(delta, jump_terminal_multiplier) # enhanced gravity	
 	else:		

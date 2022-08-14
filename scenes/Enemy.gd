@@ -36,7 +36,7 @@ func turn_around():
 func patroling(my_delta):
 	if is_on_wall() || !get_node("CheckFall").is_colliding():
 		turn_around()
-	velocity.x= lerp( direction.x * max_speed,velocity.x,pow(2,-40* my_delta)) 	
+	velocity.x= lerpf( direction.x * max_speed,velocity.x,pow(2,-40* my_delta)) 	
 	#actor.velocity.x = actor.direction.x * actor.max_speed
 	move_and_slide()
 func move_towards_target(body):

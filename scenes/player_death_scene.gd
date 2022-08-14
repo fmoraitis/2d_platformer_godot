@@ -6,7 +6,7 @@ func _physics_process(delta):
 	move_and_slide()
 #	print(velocity.y )
 	if is_on_floor():
-		velocity.x= lerp(0,velocity.x,pow(2,-10*delta)) 
+		velocity.x= lerpf(0,velocity.x,pow(2,-10*delta)) 
 	
 func apply_gravity(delta:float, gravity_multiplier:float):
 	velocity.y +=  gravity * gravity_multiplier * delta 

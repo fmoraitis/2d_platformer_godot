@@ -5,10 +5,5 @@ res://scenes/Level_01.tscn
 res://scenes/player.tscn
 res://scenes/player_death_scene.tscn
 res://scenes/GameCamera.tscn
-res://scenes/BaseLevel.gd
-res://scenes/level_screen_GameOver.tscn
-res://scenes/level_screen_GameOver.gd
-res://scenes/player_death_scene.gd
 res://scenes/Enemy.tscn
 res://scenes/player.gd
-res://scenes/Enemy.gd
