@@ -2,10 +2,14 @@ extends CharacterBody2D
 class_name Player
 
 signal died 
+signal a_dashing_kill
 
 enum State {NORMAL,DASHING}
+enum ENEMY_IS {ON_GROUND,FLYING,A_SPIKE}
+
 var curent_state = State.NORMAL
 var just_entered_state = false
+
 #preload my custom recource
 @export  var Move_Player_Profile : Resource 
 @onready var max_dashing_speed =  Move_Player_Profile.max_dashing_speed
@@ -147,21 +151,26 @@ func apply_gravity(delta:float, gravity_multiplier:float):
 	velocity.y +=  gravity * gravity_multiplier * delta 
 
 func _on_AreaValnurableToHazzards_area_entered(_area):
-	
 	if  player_already_died:
 		return
+	if curent_state == State.DASHING &&  _area.get_parent() is Enemy:
+		# i emit the dashing direection
+		a_dashing_kill.emit(sign(velocity.x)*1, _area.get_parent()) 
+#		_area.get_parent().queue_free()
+		return	
 	player_already_died=true
 	game_camera.shake_the_camera(1.5,global_delta,0.5)
-	#print(_area.get_parent().direction.x)
+		#print(_area.get_parent().direction.x)
 	if _area.get_parent() is Enemy:
-		died.emit(_area.get_parent().direction.x)
+		died.emit(_area.get_parent().direction.x,ENEMY_IS.ON_GROUND)
 		print("enemy")
 	elif _area.get_parent() is Flying_Enemy:
-		died.emit(2)
+		died.emit(0,ENEMY_IS.FLYING)
 		print("flying enemy")
 	elif _area.get_parent() is Spike:
-		died.emit(0)
+		died.emit(0,ENEMY_IS.A_SPIKE)
 		print("spike")
+	return
 #	_area.get_parent().get_node("chase_area").monitoring=false
 #	_area.get_parent().get_node("deadly_area").monitoring=false
 #	_area.get_parent().turn_around()

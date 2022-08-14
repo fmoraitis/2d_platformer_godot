@@ -1,9 +1,14 @@
-res://scenes/LevelManager.tscn
+res://scenes/player.tscn
 res://resources/theme.tres
+res://scenes/player.gd
+res://scenes/LevelManager.tscn
 res://scenes/BaseLevel.tscn
 res://scenes/Level_01.tscn
-res://scenes/player.tscn
 res://scenes/player_death_scene.tscn
 res://scenes/GameCamera.tscn
 res://scenes/Enemy.tscn
-res://scenes/player.gd
+res://scenes/BaseLevel.gd
+res://scenes/enemy_death_scene.tscn
+res://scenes/enemy_death_scene.gd
+res://scenes/player_death_scene.gd
+res://scenes/Flying_Enemy.tscn

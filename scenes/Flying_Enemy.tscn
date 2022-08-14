@@ -66,9 +66,9 @@ texture_filter = 1
 curve = SubResource("1")
 
 [node name="Enemy_Path" type="PathFollow2D" parent="."]
-position = Vector2(-25.5197, -1.84777)
-rotation = 1.49477
-offset = 26.8935
+position = Vector2(-9.1895, -17.8984)
+rotation = -3.09512
+offset = 143.432
 
 [node name="Enemy_Componets" type="Node2D" parent="Enemy_Path"]
 script = ExtResource("1_e8g56")
