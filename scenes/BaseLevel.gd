@@ -62,7 +62,7 @@ func enemy_death_scene_init(dashing_direction:int, enemy:CharacterBody2D):
 	enemy_death_scene_node =  Enemy_Death_Scene.instantiate()
 	enemy_death_scene_node.global_position = enemy.global_position
 	enemy_death_scene_node.get_node("Visuals/Sprite").flip_h = enemy.get_node("AnimatedSprite").flip_h
-	enemy_death_scene_node.velocity.x = -1*  enemy.velocity.x
+	enemy_death_scene_node.velocity.x = player_instance.velocity.x
 #	enemy_death_scene_node.velocity.y = -100	
 	# with this  i ensure that the death animation complies with the direction of the  dasing speed
 	enemy_death_scene_node.get_node("Visuals").scale.x =  dashing_direction
