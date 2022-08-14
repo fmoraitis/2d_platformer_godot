@@ -44,7 +44,8 @@ func _physics_process(delta):
 	match curent_state:
 		State.NORMAL:
 			if just_entered_state:
-				#do something
+				#setup something
+				$DashingParticles.emitting = false
 				just_entered_state = false
 			_physics_process_normal(delta)
 		State.DASHING:
@@ -55,6 +56,7 @@ func _physics_process(delta):
 			
 
 func set_up_dashing_state(delta):
+	$DashingParticles.emitting = true
 	if $AnimatedSprite.flip_h:
 		var direction_to_dash = 1
 		velocity_dashing= Vector2(direction_to_dash * max_dashing_speed,0)

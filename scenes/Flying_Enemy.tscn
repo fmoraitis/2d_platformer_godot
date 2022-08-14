@@ -76,6 +76,7 @@ script = ExtResource("1_e8g56")
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="Enemy_Path/Enemy_Componets"]
 frames = SubResource("2")
 animation = &"flying"
+frame = 1
 playing = true
 
 [node name="Hit_Box" parent="Enemy_Path/Enemy_Componets" instance=ExtResource("1")]
