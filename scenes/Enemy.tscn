@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cnua8fiaptfbd"]
+[gd_scene load_steps=20 format=3 uid="uid://cnua8fiaptfbd"]
 
 [ext_resource type="Script" path="res://scenes/Enemy.gd" id="1"]
 [ext_resource type="Script" path="res://addons/behavior_tree/nodes/bt_root.gd" id="2"]
@@ -33,6 +33,34 @@ size = Vector2(6, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i67al"]
 size = Vector2(20, 14)
 
+[sub_resource type="Shader" id="Shader_8hsbf"]
+code = "shader_type canvas_item;
+
+uniform vec3 trail_color : source_color; // Edit as a color.
+
+void fragment() {
+vec4 texColor = texture(TEXTURE,UV);
+ COLOR.rgba = vec4 (trail_color,texColor.a-0.5);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bc0o3"]
+shader = SubResource("Shader_8hsbf")
+trail_color = Color(0.988235, 0.407843, 0.231373, 1)
+
+[sub_resource type="Curve" id="Curve_1nu21"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.251295, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_51ygw"]
+curve = SubResource("Curve_1nu21")
+
+[sub_resource type="ParticlesMaterial" id="ParticlesMaterial_35fgp"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_curve = SubResource("CurveTexture_51ygw")
+
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 4
 script = ExtResource("1")
@@ -42,7 +70,6 @@ texture_filter = 1
 position = Vector2(0, -12)
 frames = SubResource("1")
 animation = &"chase"
-frame = 2
 playing = true
 flip_h = true
 
@@ -94,6 +121,16 @@ shape = SubResource("RectangleShape2D_i67al")
 [node name="VisibilityNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(0, -8)
 scale = Vector2(0.68, 0.8)
+
+[node name="DashingParticles" type="GPUParticles2D" parent="."]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_bc0o3")
+position = Vector2(0, -12)
+emitting = false
+amount = 15
+lifetime = 0.4
+process_material = SubResource("ParticlesMaterial_35fgp")
+texture = ExtResource("8")
 
 [connection signal="area_entered" from="deadly_area" to="BehaviorTreeRoot/DoOneOfTheFollowing/attack/chase" method="_on_deadly_area_area_entered"]
 [connection signal="body_entered" from="chase_area" to="BehaviorTreeRoot/DoOneOfTheFollowing/attack/chase" method="_on_chase_area_body_entered"]

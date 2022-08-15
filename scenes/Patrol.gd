@@ -8,9 +8,11 @@ extends ActionLeaf
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+#	dashing_particles.emitting = true
+	pass
 
 func tick(actor, blackboard):
 	actor.get_node("AnimatedSprite").play("run")
 	actor.patroling(blackboard.get("delta"))
+	blackboard.get("dashing_particles").emitting = false
 	return SUCCESS

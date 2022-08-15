@@ -40,7 +40,7 @@ trail_color = Color(0.52549, 0.964706, 0.733333, 1)
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.251295, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="CurveTexture" id="CurveTexture_51ygw"]
+[sub_resource type="CurveTexture" id="CurveTexture_hx3p7"]
 curve = SubResource("Curve_0qdgv")
 
 [sub_resource type="ParticlesMaterial" id="ParticlesMaterial_nqb83"]
@@ -48,7 +48,7 @@ particle_flag_disable_z = true
 gravity = Vector3(0, 0, 0)
 orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
-scale_curve = SubResource("CurveTexture_51ygw")
+scale_curve = SubResource("CurveTexture_hx3p7")
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 texture_filter = 1

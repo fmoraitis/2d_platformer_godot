@@ -75,7 +75,7 @@ func on_player_died(enemy_direction,type_of_enemy:ENEMY_IS):
 	add_child(level_game_over_screen.instantiate())
 
 func player_death_scene_create(enemy_type_or_direction:int, type_of_enemy:ENEMY_IS):
-	# 2 is a flying enemy, 0 is a spike , -1 or 1 is a regular enemy
+	
 	player_death_scene_node =  Player_Death_Scene.instantiate()
 	player_death_scene_node.global_position = player_instance.global_position
 	player_death_scene_node.get_node("Visuals/AnimatedSprite").flip_h = player_instance.get_node("AnimatedSprite").flip_h

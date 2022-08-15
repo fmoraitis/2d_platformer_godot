@@ -7,6 +7,7 @@ const Blackboard = preload("../blackboard.gd")
 @export var enabled := true
 
 @onready var blackboard = Blackboard.new()
+@onready var dashing_particles = $"../DashingParticles"
 
 func _ready():
 	if self.get_child_count() != 1:
@@ -19,7 +20,8 @@ func _physics_process(delta):
 		return
 
 	blackboard.set("delta", delta)
-
+	blackboard.set("dashing_particles", dashing_particles)
+	
 	self.get_child(0).tick(get_parent(), blackboard)
 
 

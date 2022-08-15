@@ -10,7 +10,7 @@ var player_death = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
 
 func tick(actor, blackboard):
 	if (player_body!=null) && !body_exited:			
@@ -19,6 +19,7 @@ func tick(actor, blackboard):
 			return SUCCESS		
 		actor.move_towards_target(player_body)	
 		actor.get_node("AnimatedSprite").play("chase")
+		blackboard.get("dashing_particles").emitting = true
 		#print("still chasing")
 		return RUNNING
 	return FAILURE
