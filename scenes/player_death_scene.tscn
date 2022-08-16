@@ -62,7 +62,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Visuals/GPUParticles2D:emitting")
+tracks/4/path = NodePath("Visuals/PlayerDyingParticles2D:emitting")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -156,7 +156,7 @@ animation = &"idle"
 playing = true
 offset = Vector2(0, -12)
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="Visuals"]
+[node name="PlayerDyingParticles2D" type="GPUParticles2D" parent="Visuals"]
 material = SubResource("CanvasItemMaterial_ouu6l")
 position = Vector2(7, -7)
 emitting = false

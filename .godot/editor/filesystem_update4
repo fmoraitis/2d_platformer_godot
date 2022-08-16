@@ -4,9 +4,9 @@ res://scenes/BaseLevel.tscn
 res://scenes/player.tscn
 res://scenes/player_death_scene.tscn
 res://scenes/enemy_death_scene.tscn
-res://scenes/BaseLevel.gd
 res://scenes/Enemy.tscn
-res://scenes/Patrol.gd
-res://scenes/chase.gd
-res://scenes/Enemy.gd
-res://addons/behavior_tree/nodes/bt_root.gd
+res://scenes/player.gdshader
+res://scenes/BaseLevel.gd
+res://scenes/grass.tscn
+res://scenes/grass.gdshader
+res://scenes/Level_01.tscn

@@ -735,3 +735,5 @@ unique_name_in_owner = true
 [node name="flag" parent="." instance=ExtResource("3")]
 
 [node name="PlayerRoot" type="Node2D" parent="."]
+
+[node name="Nature" type="Node2D" parent="."]

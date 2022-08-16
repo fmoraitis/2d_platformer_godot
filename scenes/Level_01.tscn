@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://btafiy3ctme5i"]
+[gd_scene load_steps=7 format=3 uid="uid://btafiy3ctme5i"]
 
 [ext_resource type="PackedScene" uid="uid://6gv2w67x8cpi" path="res://scenes/BaseLevel.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://cnua8fiaptfbd" path="res://scenes/Enemy.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://bhhkum86l0sc6" path="res://scenes/Spike.tscn" id="4"]
 [ext_resource type="PackedScene" uid="uid://bd8vouy373g2y" path="res://scenes/coin.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://dwajphfv6f64r" path="res://scenes/grass.tscn" id="6_ksajb"]
 [ext_resource type="PackedScene" uid="uid://b6dmi1akopa75" path="res://scenes/Flying_Enemy.tscn" id="7"]
 
 [node name="Level_01" instance=ExtResource("1")]
@@ -117,3 +118,57 @@ rotation = 3.14159
 
 [node name="flag" parent="." index="6"]
 position = Vector2(-810, -649)
+
+[node name="Grass" parent="Nature" index="0" instance=ExtResource("6_ksajb")]
+position = Vector2(5, 53)
+
+[node name="Grass2" parent="Nature" index="1" instance=ExtResource("6_ksajb")]
+position = Vector2(11, 53)
+
+[node name="Grass3" parent="Nature" index="2" instance=ExtResource("6_ksajb")]
+position = Vector2(17, 53)
+
+[node name="Grass4" parent="Nature" index="3" instance=ExtResource("6_ksajb")]
+position = Vector2(-3, 53)
+
+[node name="Grass5" parent="Nature" index="4" instance=ExtResource("6_ksajb")]
+position = Vector2(-7, 53)
+
+[node name="Grass6" parent="Nature" index="5" instance=ExtResource("6_ksajb")]
+position = Vector2(-11, 53)
+
+[node name="Grass7" parent="Nature" index="6" instance=ExtResource("6_ksajb")]
+position = Vector2(85, -1)
+
+[node name="Grass8" parent="Nature" index="7" instance=ExtResource("6_ksajb")]
+position = Vector2(91, -1)
+
+[node name="Grass9" parent="Nature" index="8" instance=ExtResource("6_ksajb")]
+position = Vector2(97, -1)
+
+[node name="Grass10" parent="Nature" index="9" instance=ExtResource("6_ksajb")]
+position = Vector2(77, -1)
+
+[node name="Grass11" parent="Nature" index="10" instance=ExtResource("6_ksajb")]
+position = Vector2(73, -1)
+
+[node name="Grass12" parent="Nature" index="11" instance=ExtResource("6_ksajb")]
+position = Vector2(69, -1)
+
+[node name="Grass13" parent="Nature" index="12" instance=ExtResource("6_ksajb")]
+position = Vector2(136, -199)
+
+[node name="Grass14" parent="Nature" index="13" instance=ExtResource("6_ksajb")]
+position = Vector2(142, -199)
+
+[node name="Grass15" parent="Nature" index="14" instance=ExtResource("6_ksajb")]
+position = Vector2(148, -199)
+
+[node name="Grass16" parent="Nature" index="15" instance=ExtResource("6_ksajb")]
+position = Vector2(128, -199)
+
+[node name="Grass17" parent="Nature" index="16" instance=ExtResource("6_ksajb")]
+position = Vector2(124, -199)
+
+[node name="Grass18" parent="Nature" index="17" instance=ExtResource("6_ksajb")]
+position = Vector2(120, -199)

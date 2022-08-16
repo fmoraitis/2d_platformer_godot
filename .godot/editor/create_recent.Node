@@ -1,6 +1,6 @@
-GPUParticles2D
-Sprite2D
 Node2D
+Sprite2D
+GPUParticles2D
 AnimationPlayer
 Node
 CharacterBody2D
