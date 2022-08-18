@@ -10,6 +10,8 @@ enum ENEMY_IS {ON_GROUND,FLYING,A_SPIKE}
 var curent_state = State.NORMAL
 var just_entered_state = false
 
+var FootSteps_Scene = preload("res://scenes/foot_steps.tscn")
+
 #preload my custom recource
 @export  var Move_Player_Profile : Resource 
 @onready var max_dashing_speed =  Move_Player_Profile.max_dashing_speed
@@ -101,7 +103,7 @@ func _physics_process_normal(delta):
 	
 	######### APPLY VERTICAL MOVEMENT ######################################
 	if move_vector.y <0 && (is_on_floor() || !$CoyoteTimer.is_stopped() || has_double_jump):
-		velocity.y = move_vector.y * jump_speed # APPLY JUMP **************************
+		velocity.y = move_vector.y * jump_speed # APPLY JUMP **************************	
 #		game_camera.shake_the_camera(1.0,delta,0.5)
 		if (!is_on_floor() && $CoyoteTimer.is_stopped()) : # if both wer true means we used our double jump
 			game_camera.shake_the_camera(0.75,delta,0.5)
@@ -120,6 +122,13 @@ func _physics_process_normal(delta):
 	###################  MOVE APPLIED #######################################
 	move_and_slide()
 	################### AFTER THE MOVE IS APPLIED ###########################
+	if (!was_on_floor && is_on_floor()):
+		var foot_steps = FootSteps_Scene.instantiate()
+		foot_steps.global_position = global_position 
+		foot_steps.get_node("FootStepsParticles").amount=5
+#		foot_steps.get_node("FootStepsParticles").process_material.set("emission_sphere_radius", 20)
+		get_parent().add_child(foot_steps)
+	
 	if (was_on_floor && !is_on_floor()):
 		$CoyoteTimer.start()
 	if (is_on_floor()): 
@@ -134,9 +143,15 @@ func _physics_process_normal(delta):
 		else:
 			$AnimatedSprite.flip_h = false
 	if (!is_on_floor()): 
-		$AnimatedSprite.play("jump")		
+		$AnimatedSprite.play("jump")
+			
 	elif  (move_vector.x!=0):
 		$AnimatedSprite.play("run")
+		var foot_steps = FootSteps_Scene.instantiate()
+		foot_steps.global_position = global_position 
+		foot_steps.get_node("FootStepsParticles").amount=1
+#		foot_steps.get_node("FootStepsParticles").process_material.set("emission_sphere_radius", 10)
+		get_parent().add_child(foot_steps)
 	else:
 		$AnimatedSprite.play("idle")	
 		
@@ -198,3 +213,12 @@ func _on_AreaValnurableToHazzards_area_entered(_area):
 
 
 
+
+
+func _on_animated_sprite_frame_changed():
+	pass # Replace with function body.
+#	if ($AnimatedSprite.animation == "run" && $AnimatedSprite.frame == 0):
+#		var foot_steps = FootSteps_Scene.instantiate()
+#		foot_steps.global_position = global_position 
+#		get_parent().add_child(foot_steps)
+		

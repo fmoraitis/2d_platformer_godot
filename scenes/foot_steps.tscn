@@ -1,0 +1,95 @@
+[gd_scene load_steps=10 format=3 uid="uid://davhvavo27sio"]
+
+[ext_resource type="Texture2D" uid="uid://c4egg2vcq50iq" path="res://assets/effects/particles.png" id="1_x8h4f"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ul54h"]
+particles_animation = true
+particles_anim_h_frames = 2
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_nn4xl"]
+offsets = PackedFloat32Array(0.00330033, 0.485149)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.533333)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_dp6rh"]
+gradient = SubResource("Gradient_nn4xl")
+
+[sub_resource type="Curve" id="Curve_m4l11"]
+_data = [Vector2(0.028125, 0), 0.0, 0.0, 0, 0, Vector2(0.159375, 0.990385), 0.0, 0.0, 0, 0, Vector2(0.240625, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_d3oc3"]
+curve = SubResource("Curve_m4l11")
+
+[sub_resource type="ParticlesMaterial" id="ParticlesMaterial_xiedy"]
+emission_shape = 1
+emission_sphere_radius = 10.0
+particle_flag_disable_z = true
+direction = Vector3(0, 1, 0)
+gravity = Vector3(0, -10, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+angular_velocity_max = 180.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_d3oc3")
+color_ramp = SubResource("GradientTexture1D_dp6rh")
+turbulence_noise_strength = 7.29
+anim_offset_min = 1.0
+anim_offset_max = 1.0
+
+[sub_resource type="Animation" id="Animation_tdser"]
+resource_name = "footSteps"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FootStepsParticles:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ylqi7"]
+_data = {
+"footSteps": SubResource("Animation_tdser")
+}
+
+[node name="FootSteps" type="Node2D"]
+
+[node name="FootStepsParticles" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_ul54h")
+emitting = false
+amount = 2
+lifetime = 0.6
+one_shot = true
+explosiveness = 0.67
+randomness = 0.5
+process_material = SubResource("ParticlesMaterial_xiedy")
+texture = ExtResource("1_x8h4f")
+
+[node name="Play_Kill_FootSteps" type="AnimationPlayer" parent="."]
+autoplay = "footSteps"
+libraries = {
+"": SubResource("AnimationLibrary_ylqi7")
+}

@@ -97,4 +97,5 @@ lifetime = 0.4
 process_material = SubResource("ParticlesMaterial_nqb83")
 texture = ExtResource("1")
 
+[connection signal="frame_changed" from="AnimatedSprite" to="." method="_on_animated_sprite_frame_changed"]
 [connection signal="area_entered" from="AreaValnurableToHazzards" to="." method="_on_AreaValnurableToHazzards_area_entered"]

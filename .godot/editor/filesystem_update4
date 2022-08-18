@@ -1,12 +1,10 @@
-res://scenes/LevelManager.tscn
 res://resources/theme.tres
-res://scenes/BaseLevel.tscn
+res://scenes/foot_steps.tscn
+res://scenes/grass.gdshader
 res://scenes/player.tscn
+res://scenes/player.gd
+res://scenes/BaseLevel.tscn
 res://scenes/player_death_scene.tscn
 res://scenes/enemy_death_scene.tscn
-res://scenes/Enemy.tscn
-res://scenes/player.gdshader
-res://scenes/BaseLevel.gd
-res://scenes/grass.tscn
-res://scenes/grass.gdshader
 res://scenes/Level_01.tscn
+res://scenes/Enemy.tscn

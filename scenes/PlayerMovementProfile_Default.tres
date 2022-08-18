@@ -7,5 +7,5 @@ script = ExtResource("1")
 max_dashing_speed = 500
 gravity = 900
 max_horizontal_speed = 125
-horizontal_acceleration = 2000
+horizontal_acceleration = 1000
 jump_speed = 330
