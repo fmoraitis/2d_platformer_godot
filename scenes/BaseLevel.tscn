@@ -847,14 +847,14 @@ level_game_over_screen = ExtResource("3_8kdc1")
 
 [node name="LevelUI" parent="." instance=ExtResource("1")]
 
+[node name="GameCamera" parent="." instance=ExtResource("2")]
+
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
 position = Vector2(3, -1)
 tile_set = SubResource("TileSet_3jx1b")
 cell_quadrant_size = 18
 format = 2
-
-[node name="GameCamera" parent="." instance=ExtResource("2")]
 
 [node name="Enemies" type="Node2D" parent="."]
 unique_name_in_owner = true

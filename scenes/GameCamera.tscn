@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://on7ic0k6265"]
+[gd_scene load_steps=4 format=3 uid="uid://on7ic0k6265"]
 
 [ext_resource type="Script" path="res://scenes/GameCamera.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://4qp3sv1fpgpv" path="res://scenes/clouds.tscn" id="2_vshfq"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_m0b14"]
 seed = 345
@@ -9,3 +10,5 @@ seed = 345
 current = true
 script = ExtResource("1")
 shake_noise = SubResource("FastNoiseLite_m0b14")
+
+[node name="clouds" parent="." instance=ExtResource("2_vshfq")]

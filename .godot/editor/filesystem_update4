@@ -1,8 +1,10 @@
-res://scenes/Level_01.tscn
 res://resources/theme.tres
+res://scenes/clouds.tscn
+res://scenes/GameCamera.tscn
 res://scenes/player.tscn
+res://scenes/BaseLevel.tscn
 res://scenes/player_death_scene.tscn
 res://scenes/enemy_death_scene.tscn
+res://scenes/Level_01.tscn
 res://scenes/Enemy.tscn
 res://scenes/foot_steps.tscn
-res://scenes/BaseLevel.tscn
