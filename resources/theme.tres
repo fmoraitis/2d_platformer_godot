@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://bsgpgdolfh7ng" path="res://resources/font.tres" id="1"]
 [ext_resource type="Texture2D" uid="uid://dqiqkkr5ec6ww" path="res://assets/ui/tile_0029.png" id="2_sltn3"]
 [ext_resource type="Texture2D" uid="uid://s6xq28xuhwua" path="res://assets/ui/tile_0009.png" id="2_tm2qt"]
-[ext_resource type="FontFile" uid="uid://dbb8u1tg67yyf" path="res://resources/4.1 BitPotion.ttf" id="4_7l4al"]
+[ext_resource type="FontFile" uid="uid://dy31gqda1a3so" path="res://resources/4.1 BitPotion.ttf" id="4_7l4al"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dpyoy"]
 texture = ExtResource("2_tm2qt")

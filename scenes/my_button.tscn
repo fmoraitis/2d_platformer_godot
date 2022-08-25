@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://doprwasdyr4gf"]
+
+[ext_resource type="Theme" uid="uid://cgprw6f36gh1w" path="res://resources/theme.tres" id="1_6cj5g"]
+[ext_resource type="Script" path="res://scenes/my_button.gd" id="2_hby5f"]
+
+[node name="MyButton" type="Button"]
+custom_minimum_size = Vector2(80, 24)
+offset_right = 50.0
+offset_bottom = 25.0
+size_flags_horizontal = 6
+theme = ExtResource("1_6cj5g")
+text = "TEST"
+script = ExtResource("2_hby5f")
+
+[connection signal="mouse_entered" from="." to="." method="_on_my_button_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_my_button_mouse_exited"]

@@ -1,3 +1,4 @@
+Button
 GPUParticles2D
 AnimationPlayer
 Node2D
@@ -6,7 +7,6 @@ Node
 CharacterBody2D
 PanelContainer
 ColorRect
-Button
 Label
 VBoxContainer
 MarginContainer
