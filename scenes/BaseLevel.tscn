@@ -859,9 +859,6 @@ format = 2
 [node name="Enemies" type="Node2D" parent="."]
 unique_name_in_owner = true
 
-[node name="Collectibles" type="Node2D" parent="."]
-unique_name_in_owner = true
-
 [node name="Hazards" type="Node2D" parent="."]
 unique_name_in_owner = true
 
@@ -870,3 +867,5 @@ unique_name_in_owner = true
 [node name="PlayerRoot" type="Node2D" parent="."]
 
 [node name="Nature" type="Node2D" parent="."]
+
+[node name="colectibles" type="Node2D" parent="."]

@@ -1,12 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://bd8vouy373g2y"]
+[gd_scene load_steps=10 format=3 uid="uid://bmkpxufyybl55"]
 
-[ext_resource type="Texture2D" uid="uid://bv65tcu4j3ua6" path="res://assets/coins/tile_0151.png" id="1"]
-[ext_resource type="Texture2D" uid="uid://bj8dbt32ue6ra" path="res://assets/coins/tile_0152.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://ddrvvm53ts27c" path="res://assets/coins/coin01.png" id="2_gcwv3"]
 [ext_resource type="Script" path="res://scenes/coin.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://c0nsm73mmftgb" path="res://assets/coins/coin02.png" id="3_08pqv"]
 
 [sub_resource type="SpriteFrames" id="1"]
 animations = [{
-"frames": [ExtResource("1"), ExtResource("2")],
+"frames": [ExtResource("2_gcwv3"), ExtResource("3_08pqv")],
 "loop": true,
 "name": &"turn",
 "speed": 5.0
@@ -107,4 +107,4 @@ libraries = {
 "": SubResource("AnimationLibrary_swt8m")
 }
 
-[connection signal="area_entered" from="AnimatedSprite/CoinPickedUpArea" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="AnimatedSprite/CoinPickedUpArea" to="." method="_on_coin_picked_up_area_area_entered"]

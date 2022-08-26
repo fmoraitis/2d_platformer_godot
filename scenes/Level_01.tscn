@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://6gv2w67x8cpi" path="res://scenes/BaseLevel.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://cnua8fiaptfbd" path="res://scenes/Enemy.tscn" id="3"]
 [ext_resource type="PackedScene" uid="uid://bhhkum86l0sc6" path="res://scenes/Spike.tscn" id="4"]
-[ext_resource type="PackedScene" uid="uid://bd8vouy373g2y" path="res://scenes/coin.tscn" id="5"]
 [ext_resource type="PackedScene" uid="uid://dwajphfv6f64r" path="res://scenes/grass.tscn" id="6_ksajb"]
+[ext_resource type="PackedScene" uid="uid://bmkpxufyybl55" path="res://scenes/coin.tscn" id="6_ld3kn"]
 [ext_resource type="PackedScene" uid="uid://b6dmi1akopa75" path="res://scenes/Flying_Enemy.tscn" id="7"]
 
 [node name="Level_01" instance=ExtResource("1")]
@@ -33,54 +33,6 @@ position = Vector2(-78, -186)
 
 [node name="Flying_Enemy" parent="Enemies" index="4" instance=ExtResource("7")]
 position = Vector2(56, -40)
-
-[node name="coin" parent="Collectibles" index="0" instance=ExtResource("5")]
-position = Vector2(-128, -112)
-
-[node name="coin15" parent="Collectibles" index="1" instance=ExtResource("5")]
-position = Vector2(-47, -21)
-
-[node name="coin16" parent="Collectibles" index="2" instance=ExtResource("5")]
-position = Vector2(105, -89)
-
-[node name="coin2" parent="Collectibles" index="3" instance=ExtResource("5")]
-position = Vector2(176, -112)
-
-[node name="coin3" parent="Collectibles" index="4" instance=ExtResource("5")]
-position = Vector2(288, -165)
-
-[node name="coin4" parent="Collectibles" index="5" instance=ExtResource("5")]
-position = Vector2(320, -165)
-
-[node name="coin5" parent="Collectibles" index="6" instance=ExtResource("5")]
-position = Vector2(397, -317)
-
-[node name="coin6" parent="Collectibles" index="7" instance=ExtResource("5")]
-position = Vector2(705, -386)
-
-[node name="coin7" parent="Collectibles" index="8" instance=ExtResource("5")]
-position = Vector2(56, -491)
-
-[node name="coin8" parent="Collectibles" index="9" instance=ExtResource("5")]
-position = Vector2(241, -546)
-
-[node name="coin9" parent="Collectibles" index="10" instance=ExtResource("5")]
-position = Vector2(279, -528)
-
-[node name="coin10" parent="Collectibles" index="11" instance=ExtResource("5")]
-position = Vector2(-312, -536)
-
-[node name="coin11" parent="Collectibles" index="12" instance=ExtResource("5")]
-position = Vector2(-336, -536)
-
-[node name="coin12" parent="Collectibles" index="13" instance=ExtResource("5")]
-position = Vector2(-360, -536)
-
-[node name="coin13" parent="Collectibles" index="14" instance=ExtResource("5")]
-position = Vector2(-838, -556)
-
-[node name="coin14" parent="Collectibles" index="15" instance=ExtResource("5")]
-position = Vector2(-871, -483)
 
 [node name="Spikes@Spike4" parent="Hazards" index="0" instance=ExtResource("4")]
 position = Vector2(140, -53)
@@ -123,7 +75,7 @@ rotation = 3.14159
 position = Vector2(534, -327)
 rotation = 3.14159
 
-[node name="flag" parent="." index="6"]
+[node name="flag" parent="." index="5"]
 position = Vector2(-810, -649)
 
 [node name="Grass" parent="Nature" index="0" instance=ExtResource("6_ksajb")]
@@ -179,3 +131,15 @@ position = Vector2(124, -199)
 
 [node name="Grass18" parent="Nature" index="17" instance=ExtResource("6_ksajb")]
 position = Vector2(120, -199)
+
+[node name="coin" parent="colectibles" index="0" instance=ExtResource("6_ld3kn")]
+position = Vector2(-109, -62)
+
+[node name="coin2" parent="colectibles" index="1" instance=ExtResource("6_ld3kn")]
+position = Vector2(309, -155)
+
+[node name="coin3" parent="colectibles" index="2" instance=ExtResource("6_ld3kn")]
+position = Vector2(358, -155)
+
+[node name="coin4" parent="colectibles" index="3" instance=ExtResource("6_ld3kn")]
+position = Vector2(407, -155)
