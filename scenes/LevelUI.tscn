@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/LevelUI.gd" id="2"]
 [ext_resource type="Texture2D" uid="uid://bv65tcu4j3ua6" path="res://assets/coins/tile_0151.png" id="4"]
 [ext_resource type="Texture2D" uid="uid://bj8dbt32ue6ra" path="res://assets/coins/tile_0152.png" id="5"]
-[ext_resource type="FontFile" uid="uid://dbb8u1tg67yyf" path="res://resources/4.1 BitPotion.ttf" id="5_qa315"]
+[ext_resource type="FontFile" uid="uid://dy31gqda1a3so" path="res://resources/4.1 BitPotion.ttf" id="5_qa315"]
 
 [sub_resource type="AnimatedTexture" id="1"]
 frames = 2

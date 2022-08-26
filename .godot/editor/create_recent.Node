@@ -1,14 +1,14 @@
+ColorRect
+AnimationPlayer
+CanvasLayer
 Node2D
 AnimatedSprite2D
 Sprite2D
 Node
-CanvasLayer
 Button
 GPUParticles2D
-AnimationPlayer
 CharacterBody2D
 PanelContainer
-ColorRect
 Label
 VBoxContainer
 MarginContainer
