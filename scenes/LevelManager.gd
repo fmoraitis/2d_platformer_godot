@@ -22,3 +22,6 @@ func next_level():
 
 func reload_level():
 	change_level (current_level_index)
+
+func quit_game():
+	get_tree().quit()

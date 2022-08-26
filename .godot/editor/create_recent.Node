@@ -1,7 +1,8 @@
+Node2D
+CanvasLayer
 Button
 GPUParticles2D
 AnimationPlayer
-Node2D
 Sprite2D
 Node
 CharacterBody2D
@@ -10,4 +11,3 @@ ColorRect
 Label
 VBoxContainer
 MarginContainer
-CanvasLayer

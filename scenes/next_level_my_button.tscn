@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c131imrv7gmj7"]
+
+[ext_resource type="PackedScene" uid="uid://doprwasdyr4gf" path="res://scenes/my_button.tscn" id="1_ws3ew"]
+
+[node name="NextLevel" instance=ExtResource("1_ws3ew")]
+text = "next level"

@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://yde338ocwf2v"]
+[gd_scene load_steps=5 format=3 uid="uid://cqhqehi6whq02"]
 
 [ext_resource type="Script" path="res://scenes/level_screen_complete.gd" id="1_ymkyr"]
 [ext_resource type="Theme" uid="uid://cgprw6f36gh1w" path="res://resources/theme.tres" id="2_3xxng"]
-[ext_resource type="FontFile" uid="uid://dy31gqda1a3so" path="res://resources/4.1 BitPotion.ttf" id="3_03u3y"]
-[ext_resource type="PackedScene" uid="uid://doprwasdyr4gf" path="res://scenes/my_button.tscn" id="4_yoi50"]
+[ext_resource type="PackedScene" uid="uid://c131imrv7gmj7" path="res://scenes/next_level_my_button.tscn" id="3_tigph"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y2rw6"]
 bg_color = Color(0.631373, 0.631373, 0.631373, 0.894118)
@@ -38,16 +37,17 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_y2rw6")
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer2"]
 texture_filter = 1
 offset_right = 132.0
-offset_bottom = 92.0
+offset_bottom = 84.0
 theme = ExtResource("2_3xxng")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer2/MarginContainer"]
 custom_minimum_size = Vector2(112, 24)
 offset_left = 10.0
-offset_top = 10.0
+offset_top = 20.0
 offset_right = 122.0
-offset_bottom = 82.0
+offset_bottom = 63.0
 size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="PanelContainer2/MarginContainer/VBoxContainer"]
 offset_right = 112.0
@@ -57,22 +57,10 @@ text = "Level Complete!
 "
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="PanelContainer2/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(80, 0)
+[node name="NextLevel" parent="PanelContainer2/MarginContainer/VBoxContainer" instance=ExtResource("3_tigph")]
 offset_left = 16.0
 offset_top = 18.0
 offset_right = 96.0
 offset_bottom = 43.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("3_03u3y")
-theme_override_font_sizes/font_size = 16
-text = "next level"
 
-[node name="MyButton" parent="PanelContainer2/MarginContainer/VBoxContainer" instance=ExtResource("4_yoi50")]
-offset_left = 16.0
-offset_top = 47.0
-offset_right = 96.0
-offset_bottom = 72.0
-
-[connection signal="pressed" from="PanelContainer2/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="PanelContainer2/MarginContainer/VBoxContainer/NextLevel" to="." method="_on_next_level_pressed"]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bawnrwm73bcyp"]
+
+[ext_resource type="PackedScene" uid="uid://doprwasdyr4gf" path="res://scenes/my_button.tscn" id="1_1ccsg"]
+
+[node name="QuitButton" instance=ExtResource("1_1ccsg")]

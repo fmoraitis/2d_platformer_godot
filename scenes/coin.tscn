@@ -87,9 +87,10 @@ script = ExtResource("3")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -0.649687)
+position = Vector2(0, 2.98023e-06)
 frames = SubResource("1")
 animation = &"turn"
+frame = 1
 playing = true
 
 [node name="CoinPickedUpArea" type="Area2D" parent="AnimatedSprite"]

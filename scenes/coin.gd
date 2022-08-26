@@ -8,7 +8,8 @@ func _on_Area2D_area_entered(_area):
 #	$AnimationPlayer.play("free_coin")
 	var base_level= get_tree().get_nodes_in_group("base_level")[0]
 	base_level.coins_collected()
-	call_deferred("queue_free")
+	queue_free()
+#	call_deferred("queue_free")
 	#area.get_parent().scale *= 1.1 
 	#print("picked")
 	#queue_free()
