@@ -1,15 +1,7 @@
-res://resources/theme.tres
 res://scenes/screen_transition.tscn
-res://scenes/grass.gdshader
 res://scenes/screen_transition.gdshader
-res://scenes/player.tscn
+res://resources/theme.tres
 res://scenes/BaseLevel.tscn
 res://scenes/Level_01.tscn
 res://scenes/LevelManager.tscn
-res://scenes/level_screen_GameOver.tscn
 res://scenes/main_menu_screen.tscn
-res://scenes/coin.tscn
-res://scenes/LevelManager.gd
-res://scenes/screen_transition.gd
-res://scenes/LevelUI.tscn
-res://scenes/level_screen_complete.tscn
