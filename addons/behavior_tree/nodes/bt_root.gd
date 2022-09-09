@@ -1,7 +1,7 @@
 extends BehaviorTree
 
 class_name BehaviorTreeRoot#, "../icons/tree.svg"
-
+@icon("../icons/tree.svg")
 const Blackboard = preload("../blackboard.gd")
 
 @export var enabled := true

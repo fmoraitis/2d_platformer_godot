@@ -1,6 +1,7 @@
 res://addons/behavior_tree/nodes/leaves/action.gd
 res://scenes/BaseLevel.gd
 res://addons/behavior_tree/nodes/behavior_tree.gd
+res://addons/behavior_tree/blackboard.gd
 res://addons/behavior_tree/nodes/bt_node.gd
 res://addons/behavior_tree/nodes/bt_root.gd
 res://scenes/caught.gd
@@ -23,9 +24,6 @@ res://scenes/my_button.gd
 res://scenes/Patrol.gd
 res://scenes/player.gd
 res://scenes/player_death_scene.gd
-res://scenes/screen_transition.gd
-res://addons/behavior_tree/nodes/composites/selector.gd
-res://addons/behavior_tree/nodes/composites/sequence.gd
 res://scenes/BaseLevel.tscn
 res://resources/theme.tres
 res://scenes/Level_01.tscn
@@ -36,3 +34,10 @@ res://scenes/player.tscn
 res://scenes/GameCamera.tscn
 res://scenes/Flying_Enemy.tscn
 res://scenes/Enemy.tscn
+res://addons/behavior_tree/nodes/decorators/decorator.gd
+res://addons/behavior_tree/nodes/decorators/failer.gd
+res://addons/behavior_tree/nodes/decorators/inverter.gd
+res://addons/behavior_tree/nodes/decorators/limiter.gd
+res://addons/behavior_tree/nodes/decorators/succeeder.gd
+res://addons/behavior_tree/nodes/composites/selector.gd
+res://addons/behavior_tree/nodes/composites/sequence.gd

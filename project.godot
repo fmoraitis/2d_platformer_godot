@@ -120,27 +120,27 @@ _global_script_classes=[{
 "path": "res://scenes/Spike.gd"
 }]
 _global_script_class_icons={
-"ActionLeaf": "",
+"ActionLeaf": "res://addons/behavior_tree/icons/action.svg",
 "AlwaysFailDecorator": "res://addons/behavior_tree/icons/fail.svg",
 "AlwaysSucceedDecorator": "res://addons/behavior_tree/icons/succeed.svg",
 "BaseLevel": "",
 "BehaviorTree": "",
-"BehaviorTreeNode": "",
-"BehaviorTreeRoot": "",
+"BehaviorTreeNode": "res://addons/behavior_tree/icons/action.svg",
+"BehaviorTreeRoot": "res://addons/behavior_tree/icons/tree.svg",
 "Coin": "",
-"Composite": "",
-"ConditionLeaf": "",
+"Composite": "res://addons/behavior_tree/icons/category_composite.svg",
+"ConditionLeaf": "res://addons/behavior_tree/icons/condition.svg",
 "Decorator": "res://addons/behavior_tree/icons/category_decorator.svg",
 "Enemy": "",
 "Flag_Area": "",
 "Flying_Enemy": "",
 "InverterDecorator": "res://addons/behavior_tree/icons/inverter.svg",
-"Leaf": "",
+"Leaf": "res://addons/behavior_tree/icons/action.svg",
 "LimiterDecorator": "res://addons/behavior_tree/icons/limiter.svg",
 "Player": "",
 "PlayerMovementProfile": "",
-"SelectorComposite": "",
-"SequenceComposite": "",
+"SelectorComposite": "res://addons/behavior_tree/icons/selector.svg",
+"SequenceComposite": "res://addons/behavior_tree/icons/sequencer.svg",
 "Spike": ""
 }
 
