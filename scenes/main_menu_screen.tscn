@@ -852,12 +852,12 @@ anti_aliasing = false
 [node name="MainMenuScreen" type="CanvasLayer"]
 script = ExtResource("1_2xcsl")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="GameScenicAsBG" type="Node2D" parent="."]
 position = Vector2(176, 90)
 
-[node name="GameCamera" parent="Node2D" instance=ExtResource("2_tw4ky")]
+[node name="GameCamera" parent="GameScenicAsBG" instance=ExtResource("2_tw4ky")]
 
-[node name="TileMap" type="TileMap" parent="Node2D"]
+[node name="TileMap" type="TileMap" parent="GameScenicAsBG"]
 texture_filter = 1
 position = Vector2(3, -1)
 tile_set = SubResource("TileSet_x8o1c")
@@ -872,52 +872,56 @@ layer_1/y_sort_origin = 0
 layer_1/z_index = 0
 layer_1/tile_data = PackedInt32Array(196604, 1114112, 6, 131068, 1179648, 6, 65532, 1048576, 5, -4, 1048576, 4, -65540, 1114112, 4, -65541, 1114112, 2, -131076, 1179648, 0, -131077, 1114112, 0, -131075, 1245184, 0, -65539, 1245184, 2, 131069, 1245184, 4, 131070, 1245184, 6, 131074, 1114112, 6, 65538, 1048576, 5, 2, 1048576, 5, -65534, 1048576, 5, -131070, 1048576, 5, -196606, 1048576, 4, -262142, 1048576, 5, -327678, 1048576, 5, -393214, 1048576, 4, -458750, 1048576, 5, -524286, 1048576, 4, -589822, 1048576, 5, -655358, 1048576, 1)
 
-[node name="Nature" type="Node2D" parent="Node2D"]
+[node name="Nature" type="Node2D" parent="GameScenicAsBG"]
 
-[node name="Grass" parent="Node2D/Nature" instance=ExtResource("5_kulrk")]
+[node name="Grass" parent="GameScenicAsBG/Nature" instance=ExtResource("5_kulrk")]
 position = Vector2(4, 53)
 
-[node name="Grass2" parent="Node2D/Nature" instance=ExtResource("5_kulrk")]
+[node name="Grass2" parent="GameScenicAsBG/Nature" instance=ExtResource("5_kulrk")]
 position = Vector2(11, 53)
 
-[node name="Grass3" parent="Node2D/Nature" instance=ExtResource("5_kulrk")]
+[node name="Grass3" parent="GameScenicAsBG/Nature" instance=ExtResource("5_kulrk")]
 position = Vector2(-19, 53)
 
-[node name="Grass4" parent="Node2D/Nature" instance=ExtResource("5_kulrk")]
+[node name="Grass4" parent="GameScenicAsBG/Nature" instance=ExtResource("5_kulrk")]
 position = Vector2(-3, 53)
 
-[node name="Grass5" parent="Node2D/Nature" instance=ExtResource("5_kulrk")]
+[node name="Grass5" parent="GameScenicAsBG/Nature" instance=ExtResource("5_kulrk")]
 position = Vector2(-9, 53)
 
-[node name="Grass6" parent="Node2D/Nature" instance=ExtResource("5_kulrk")]
+[node name="Grass6" parent="GameScenicAsBG/Nature" instance=ExtResource("5_kulrk")]
 position = Vector2(-16, 53)
 
-[node name="Grass7" parent="Node2D/Nature" instance=ExtResource("5_kulrk")]
+[node name="Grass7" parent="GameScenicAsBG/Nature" instance=ExtResource("5_kulrk")]
 position = Vector2(85, -1)
 
-[node name="Grass8" parent="Node2D/Nature" instance=ExtResource("5_kulrk")]
+[node name="Grass8" parent="GameScenicAsBG/Nature" instance=ExtResource("5_kulrk")]
 position = Vector2(91, -1)
 
-[node name="Grass9" parent="Node2D/Nature" instance=ExtResource("5_kulrk")]
+[node name="Grass9" parent="GameScenicAsBG/Nature" instance=ExtResource("5_kulrk")]
 position = Vector2(97, -1)
 
-[node name="Grass10" parent="Node2D/Nature" instance=ExtResource("5_kulrk")]
+[node name="Grass10" parent="GameScenicAsBG/Nature" instance=ExtResource("5_kulrk")]
 position = Vector2(77, -1)
 
-[node name="Grass11" parent="Node2D/Nature" instance=ExtResource("5_kulrk")]
+[node name="Grass11" parent="GameScenicAsBG/Nature" instance=ExtResource("5_kulrk")]
 position = Vector2(73, -1)
 
-[node name="Grass12" parent="Node2D/Nature" instance=ExtResource("5_kulrk")]
+[node name="Grass12" parent="GameScenicAsBG/Nature" instance=ExtResource("5_kulrk")]
 position = Vector2(69, -1)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.686275, 0.913725, 0.890196, 0.811765)
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 texture_filter = 1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -932,46 +936,37 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_ds0k1")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 texture_filter = 1
-offset_right = 132.0
-offset_bottom = 121.0
+offset_right = 112.0
+offset_bottom = 103.0
 theme = ExtResource("1_jq4vh")
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_right = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 custom_minimum_size = Vector2(112, 24)
-offset_left = 10.0
 offset_top = 10.0
-offset_right = 122.0
-offset_bottom = 111.0
+offset_right = 112.0
+offset_bottom = 93.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer"]
-offset_right = 112.0
-offset_bottom = 14.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "Level Complete!
-"
-horizontal_alignment = 1
-
 [node name="PlayButton" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("2_g1r8p")]
 offset_left = 16.0
-offset_top = 18.0
 offset_right = 96.0
-offset_bottom = 43.0
 text = "Play"
 
 [node name="OptionsButton" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_dcjsr")]
 offset_left = 16.0
-offset_top = 47.0
+offset_top = 29.0
 offset_right = 96.0
-offset_bottom = 72.0
+offset_bottom = 54.0
 text = "Options"
 
 [node name="QuitButton" parent="PanelContainer/MarginContainer/VBoxContainer" instance=ExtResource("4_xojt2")]
 offset_left = 16.0
-offset_top = 76.0
+offset_top = 58.0
 offset_right = 96.0
-offset_bottom = 101.0
+offset_bottom = 83.0
 text = "Quit"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]

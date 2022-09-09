@@ -15,5 +15,5 @@ func _ready():
 #func _process(delta):
 #	pass
 func tick(actor, blackboard):
-	print("caught and died")
+#	print("caught and died")
 	return SUCCESS

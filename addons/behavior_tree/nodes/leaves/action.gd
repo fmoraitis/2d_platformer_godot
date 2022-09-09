@@ -1,3 +1,3 @@
 extends Leaf
 
-class_name ActionLeaf, "../../icons/action.svg"
+class_name ActionLeaf#, "../../icons/action.svg"

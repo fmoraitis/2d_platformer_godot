@@ -1,6 +1,6 @@
 extends BehaviorTree
 
-class_name BehaviorTreeRoot, "../icons/tree.svg"
+class_name BehaviorTreeRoot#, "../icons/tree.svg"
 
 const Blackboard = preload("../blackboard.gd")
 

@@ -1,6 +1,6 @@
 extends BehaviorTreeNode
 
-class_name Leaf, "../../icons/action.svg"
+class_name Leaf#, "../../icons/action.svg"
 
 func _ready():
 	if self.get_child_count() != 0:

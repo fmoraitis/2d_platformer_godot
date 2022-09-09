@@ -54,7 +54,7 @@ point_count = 3
 [sub_resource type="CurveTexture" id="CurveTexture_51ygw"]
 curve = SubResource("Curve_1nu21")
 
-[sub_resource type="ParticlesMaterial" id="ParticlesMaterial_35fgp"]
+[sub_resource type="ParticleProcessMaterial" id="ParticlesMaterial_35fgp"]
 particle_flag_disable_z = true
 gravity = Vector3(0, 0, 0)
 orbit_velocity_min = 0.0
@@ -70,7 +70,6 @@ texture_filter = 1
 position = Vector2(0, -12)
 frames = SubResource("1")
 animation = &"chase"
-frame = 2
 playing = true
 flip_h = true
 

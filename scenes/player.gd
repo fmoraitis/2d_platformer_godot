@@ -180,13 +180,13 @@ func _on_AreaValnurableToHazzards_area_entered(_area):
 		#print(_area.get_parent().direction.x)
 	if _area.get_parent() is Enemy:
 		died.emit(_area.get_parent().direction.x,ENEMY_IS.ON_GROUND)
-		print("enemy")
+#		print("enemy")
 	elif _area.get_parent() is Flying_Enemy:
 		died.emit(0,ENEMY_IS.FLYING)
-		print("flying enemy")
+#		print("flying enemy")
 	elif _area.get_parent() is Spike:
 		died.emit(0,ENEMY_IS.A_SPIKE)
-		print("spike")
+#		print("spike")
 	return
 #	_area.get_parent().get_node("chase_area").monitoring=false
 #	_area.get_parent().get_node("deadly_area").monitoring=false
